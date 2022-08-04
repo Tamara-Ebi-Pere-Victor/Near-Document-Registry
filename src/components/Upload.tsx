@@ -125,7 +125,7 @@ export const Upload: React.FC<{ id: string }> = ({ id }) => {
 				 	<span> {id === "documentForUpload"? "Uploading" : "Verifying" } </span>
 					<Spinner animation="border" as="span" size="sm" role="status" aria-hidden="true" className="opacity-25"/> 
 					</> )
-				: id === "documentForUpload"? "Submit" : adminStatus || userStatus? "Submit" : hash? "Pay Verification Fee" : "Submit"
+				: id === "documentForUpload"? "Upload" : adminStatus || userStatus? "Check Document" : hash? "Pay Verification Fee" : "Check Document"
 				}
 			</Button>
 		</Form>
