@@ -1,5 +1,5 @@
 import * as registry from "./model";
-import { u128, context, logging, PersistentVector } from 'near-sdk-as';
+import { u128, context } from 'near-sdk-as';
 
 // near call documentregistry.tamaraebi.testnet init '{"owner": ""}' --accountId=
 export function initialize(newOwner: string): void {
