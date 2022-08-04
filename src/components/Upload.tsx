@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import { toast } from "react-toastify";
 import { Form, Button } from "react-bootstrap"
 import { sha3_256 } from "js-sha3"
@@ -13,9 +13,25 @@ export const Upload: React.FC<{ id: string }> = ({ id }) => {
 
 	const [name, setName] = useState("");
 
+	const [userStatus, setUserStatus]  = useState(false);
+
+	const [adminStatus, setAdminStatus] = useState(false);
+
 	const dateAdded = Date.now().toString();
 
 	const [loading, setLoading] = useState(false);
+
+	  // function to get the list of products
+	const getStatuses = useCallback(async () => {
+		try {
+		  setAdminStatus(await registry.checkAdminStatus(account.accountId));
+		  setUserStatus(await registry.checkUserStatus(hash, account.accountId));
+		} catch (error) {
+		  console.log({ error });
+		} finally {
+		  setLoading(false);
+		}
+	}, [hash, account]);
 	
 	function handleOnChange(file : any) {
 		setName(file.name);
@@ -87,6 +103,12 @@ export const Upload: React.FC<{ id: string }> = ({ id }) => {
 			console.log("invalid ID")
 		}
 	}
+
+	useEffect(() => {
+		if(hash && account){
+			getStatuses()
+		}
+	}, [hash, account, getStatuses])
 	  
 	return (
 		<Form onSubmit={onSubmit} className="mt-4">
@@ -98,7 +120,13 @@ export const Upload: React.FC<{ id: string }> = ({ id }) => {
 				/>
 			</Form.Group>
 			<Button type="submit" variant="success" id={`${id}Button`}>
-				 {loading ? <> <span> {id === "documentForUpload"? "Uploading" : "Verifying" } </span><Spinner animation="border" as="span" size="sm" role="status" aria-hidden="true" className="opacity-25"/> </> : "Submit"}
+				 {loading ? 
+				 	(<> 
+				 	<span> {id === "documentForUpload"? "Uploading" : "Verifying" } </span>
+					<Spinner animation="border" as="span" size="sm" role="status" aria-hidden="true" className="opacity-25"/> 
+					</> )
+				: id === "documentForUpload"? "Submit" : adminStatus || userStatus? "Submit" : hash? "Pay Verification Fee" : "Submit"
+				}
 			</Button>
 		</Form>
 	)
