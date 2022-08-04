@@ -1,3 +1,29 @@
+# DOCUMENT-REGISTRY
+
+This is a Dapp that helps users verify documents that have been issued by an organization. 
+
+The application uses the encryption methods sha256 and keccak-256 to produce a distinct key that is identifiable to that single issued document.
+
+This submission is a reimplementation of My submission for the dacade bounty celo201.
+
+## Contract Parameters
+  - Only the contract creator and other admins, has the ability to add documents to the contract.
+  - Also the owner of contract can add accountIds that can act as admins and add more documents to the registry.
+  - Due to the type of storage existing on the near protocol, where fees are needed to keep them on the chain, to upload documents Admins pay a fee of       0.1 Near, while for users to verify a document they pay a one time fee of 0.01 Near, which gives them access to that document whenever they want.
+  - Only Admins are allowed to check for the verification of a document without having to pay any fee.
+  - There are test files that have been uploaded to see it's functionality in action, only one of those files was not uploaded to the blockchain. the         file being the "Event Certificate.pdf".
+
+## Ways of improving this Dapp
+1. A possible way could be implementation of IPFS to help host the documents.
+
+The Documents used in this test were random pdf documents gotten from the web.
+
+## Use Cases
+1. This Dapp can be used by document issuing organizations, like schools, business, e.t.c.
+2. It can be used to ensure validity of a perticular document, and help reduce the effect of forgery in the professional world.
+
+[DappLink](https://tamara-ebi-pere-victor.github.io/Near-Document-Registry/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
