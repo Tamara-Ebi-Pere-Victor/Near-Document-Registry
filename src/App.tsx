@@ -3,7 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import { Header } from "./components/Header"
 import { Nav } from "react-bootstrap"
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { login, logout as destroy, accountBalance } from "./utils/near"
 import Wallet from "./components/Wallet"
 import coverImg from "./assets/img/registry.jpeg";
@@ -34,7 +34,6 @@ function App() {
 		<Notification />
 			{account.accountId ? (
 				<main className="container-fluid">
-				<Router>
 					<Header></Header>
 						<Nav className="justify-content-end pt-3 pb-5">
 							<Nav.Item>
@@ -51,7 +50,6 @@ function App() {
 						<Route element={<Submit />} path="/submit-document" />
 						<Route element={<Verify />} path="/verify-document" />
 					</Routes>
-				</Router>
 				<Footer />
 			</main>
 			) : (
