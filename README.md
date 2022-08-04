@@ -4,7 +4,7 @@ This is a Dapp that helps users verify documents that have been issued by an org
 
 The application uses the encryption methods sha256 and keccak-256 to produce a distinct key that is identifiable to that single issued document.
 
-This submission is a reimplementation of My submission for the dacade bounty celo201.
+This submission is a reimplementation of My submission for the dacade celo101 course bounty.
 
 ## Contract Parameters
   - Only the contract creator and other admins, has the ability to add documents to the contract.
