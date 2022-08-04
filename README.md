@@ -1,5 +1,5 @@
 # DOCUMENT-REGISTRY
-[DappLink](https://tamara-ebi-pere-victor.github.io/Near-Document-Registry/)
+[DappLink](https://doc-registry.netlify.app/)
 
 This is a Dapp that helps users verify documents that have been issued by an organization. 
 
