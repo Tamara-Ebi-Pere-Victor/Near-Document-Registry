@@ -15,7 +15,7 @@ window.nearInitPromise = initializeContract()
     root.render(
       <Router>
         <App />
-        </Router>
+      </Router>
     );
   })
   .catch(console.error);
