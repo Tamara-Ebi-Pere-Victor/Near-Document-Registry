@@ -1,7 +1,6 @@
 {
   "name": "document-registry",
   "version": "0.1.0",
-  "homepage": "https://Tamara-Ebi-Pere-Victor.github.io/Near-Document-Registry",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
