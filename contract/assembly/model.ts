@@ -24,10 +24,10 @@ export class Document {
     public checkUser(accountId: string): boolean {
         var isAllowed: boolean = false;
         for (let i = 0; i < this.allowedUsers.length; i++) {
-            if (this.allowedUsers[i] != accountId) {
-                continue
+            if (this.allowedUsers[i] === accountId) {
+                isAllowed = true;
+                break;
             }
-            isAllowed = true;
         }
         return isAllowed;
     }
