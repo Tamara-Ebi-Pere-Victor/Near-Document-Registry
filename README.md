@@ -10,7 +10,9 @@ This submission is a reimplementation of My submission for the dacade celo101 co
 ## Contract Parameters
   - Only the contract creator and other admins, has the ability to add documents to the contract.
   - Also the owner of contract can add accountIds that can act as admins and add more documents to the registry.
-  - Due to the type of storage existing on the near protocol, where fees are needed to keep them on the chain, to upload documents Admins pay a fee of       0.1 Near, while for users to verify a document they pay a one time fee of 0.01 Near, which gives them access to that document whenever they want.
+  - Due to the type of storage existing on the near protocol, where fees are needed to keep them on the chain. 
+      - To upload documents Admins pay a fee of 0.1 Near.
+      - For users to verify a document they pay a one time fee of 0.01 Near, which gives them access to that document whenever they want.
   - Only Admins are allowed to check for the verification of a document without having to pay any fee.
   - There are test files that have been uploaded to see it's functionality in action, only one of those files was not uploaded to the blockchain. the         file being the "Event Certificate.pdf".
 
