@@ -7,6 +7,8 @@ The application uses the encryption methods sha256 and keccak-256 to produce a d
 
 This submission is a reimplementation of My submission for the dacade celo101 course bounty.
 
+### NOTE: For the sake of testers, admin checker has been removed.
+
 ## Contract Parameters
   - Only the contract creator and other admins, has the ability to add documents to the contract.
   - Also the owner of contract can add accountIds that can act as admins and add more documents to the registry.
